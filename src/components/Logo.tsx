@@ -1,18 +1,12 @@
-import logo from "@/assets/logo-virtuosas.jpeg";
-
-export function Logo({
-  className = "",
-  size = "md",
-}: {
-  className?: string;
-  size?: "sm" | "md" | "lg";
-}) {
-  const h = size === "lg" ? "h-20" : size === "sm" ? "h-10" : "h-14";
+export function Logo({ className = "" }: { className?: string }) {
   return (
-    <img
-      src={logo}
-      alt="Virtuosas Studio de Beleza"
-      className={`${h} w-auto object-contain ${className}`}
-    />
+    <div className={`flex flex-col items-center leading-none ${className}`}>
+      <span className="shimmer-gold font-display text-2xl font-bold uppercase tracking-[0.18em] md:text-3xl">
+        Virtuosas
+      </span>
+      <span className="mt-1 text-[0.6rem] font-light uppercase tracking-[0.42em] text-muted-foreground md:text-xs">
+        Studio de Beleza
+      </span>
+    </div>
   );
 }
