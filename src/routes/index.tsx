@@ -6,7 +6,12 @@ import {
   Menu, X, Calendar, ChevronRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-salon.jpg";
-import aboutImg from "@/assets/about-salon.jpg";
+import aboutImg from "@/assets/srv-cabelo.jpeg";
+import gMaos from "@/assets/srv-maos.jpeg";
+import gPes from "@/assets/srv-pes.jpeg";
+import gCabelo from "@/assets/srv-cabelo.jpeg";
+import gCilios from "@/assets/srv-cilios.jpeg";
+import gSobrancelhas from "@/assets/srv-sobrancelhas.jpeg";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { WHATSAPP_URL, BOOKING_URL, ADDRESS, MAPS_URL, INSTAGRAM_URL, PHONE } from "@/lib/site";
@@ -330,8 +335,55 @@ function Index() {
         </div>
       </section>
 
+      {/* GALERIA */}
+      <section id="galeria" className="px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <p className="font-accent text-lg italic text-[color:var(--gold-dark)]">inspiração</p>
+            <h2 className="mt-2 font-display text-4xl font-bold md:text-5xl">
+              <span className="shimmer-gold">Trabalhos do Studio</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Resultados reais que traduzem a essência Virtuosas: técnica, delicadeza e elegância.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6 lg:grid-rows-2">
+            {[
+              { src: gMaos, alt: "Manicure Nude Elegance", title: "Mãos", cls: "lg:col-span-2 lg:row-span-2" },
+              { src: gCabelo, alt: "Morena iluminada", title: "Cabelo", cls: "lg:col-span-2" },
+              { src: gPes, alt: "Pedicure francesinha", title: "Pés", cls: "lg:col-span-2" },
+              { src: gCilios, alt: "Extensão de cílios", title: "Cílios", cls: "lg:col-span-2" },
+              { src: gSobrancelhas, alt: "Design de sobrancelhas", title: "Sobrancelhas", cls: "lg:col-span-2" },
+            ].map((g) => (
+              <motion.div
+                key={g.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6 }}
+                className={`group relative overflow-hidden rounded-2xl border border-[color:var(--gold)]/30 shadow-gold ${g.cls}`}
+              >
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  className="h-full min-h-[220px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute bottom-4 left-4 translate-y-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  <span className="rounded-full bg-gradient-gold px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-foreground shadow-gold">
+                    {g.title}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SOBRE */}
-      <section id="sobre" className="px-6 py-24">
+      <section id="sobre" className="bg-stone px-6 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
