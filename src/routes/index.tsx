@@ -6,7 +6,12 @@ import {
   Menu, X, Calendar, ChevronRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-salon.jpg";
-import aboutImg from "@/assets/about-salon.jpg";
+import aboutImg from "@/assets/srv-cabelo.jpeg";
+import gMaos from "@/assets/srv-maos.jpeg";
+import gPes from "@/assets/srv-pes.jpeg";
+import gCabelo from "@/assets/srv-cabelo.jpeg";
+import gCilios from "@/assets/srv-cilios.jpeg";
+import gSobrancelhas from "@/assets/srv-sobrancelhas.jpeg";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { WHATSAPP_URL, BOOKING_URL, ADDRESS, MAPS_URL, INSTAGRAM_URL, PHONE } from "@/lib/site";
