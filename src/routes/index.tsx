@@ -9,6 +9,7 @@ import heroImg from "@/assets/hero-salon.jpg";
 import aboutImg from "@/assets/about-salon.jpg";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { WHATSAPP_URL, BOOKING_URL, ADDRESS, MAPS_URL, INSTAGRAM_URL, PHONE, createWhatsAppUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -153,6 +154,34 @@ const TESTIMONIALS = [
   },
 ];
 
+const SERVICE_GALLERY = [
+  {
+    title: "Manicure",
+    image:
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&h=620&q=80",
+  },
+  {
+    title: "Pedicure",
+    image:
+      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&h=620&q=80",
+  },
+  {
+    title: "Cabelo",
+    image:
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&h=620&q=80",
+  },
+  {
+    title: "Sobrancelhas",
+    image:
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&h=620&q=80",
+  },
+  {
+    title: "Cílios",
+    image:
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&h=620&q=80",
+  },
+];
+
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<string>(CATEGORIES[0].id);
@@ -285,6 +314,30 @@ function Index() {
               Uma experiência completa de cuidado e beleza, do clássico ao contemporâneo.
             </p>
           </div>
+
+          <Carousel opts={{ align: "start", loop: true }} className="mx-auto mt-12 max-w-6xl">
+            <CarouselContent>
+              {SERVICE_GALLERY.map((item) => (
+                <CarouselItem key={item.title} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                  <article className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-card shadow-gold">
+                    <img
+                      src={item.image}
+                      alt={`Serviço de ${item.title} no Virtuosas Studio de Beleza`}
+                      loading="lazy"
+                      width={900}
+                      height={620}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent p-5">
+                      <h3 className="font-display text-2xl font-semibold text-white">{item.title}</h3>
+                    </div>
+                  </article>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 border-[color:var(--gold)]/60 bg-card text-[color:var(--gold-dark)] hover:bg-stone md:-left-6" />
+            <CarouselNext className="-right-4 border-[color:var(--gold)]/60 bg-card text-[color:var(--gold-dark)] hover:bg-stone md:-right-6" />
+          </Carousel>
 
           {/* Tabs */}
           <div className="mt-12 flex flex-wrap justify-center gap-3">
