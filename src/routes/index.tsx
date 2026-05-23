@@ -150,7 +150,7 @@ const TESTIMONIALS = [
     service: "Sobrancelhas",
     text: "O design ficou natural e valorizou muito meu rosto. Atendimento pontual, cuidadoso e super acolhedor.",
     image:
-      "https://images.unsplash.com/photo-1487412720507-e7cb37603c6f?auto=format&fit=crop&w=240&h=240&q=80",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&h=240&q=80",
   },
 ];
 
