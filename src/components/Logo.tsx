@@ -1,12 +1,15 @@
+import logoImg from "@/assets/virtuosas-logo.jpeg";
+
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex flex-col items-center leading-none ${className}`}>
-      <span className="shimmer-gold font-display text-2xl font-bold uppercase tracking-[0.18em] md:text-3xl">
-        Virtuosas
-      </span>
-      <span className="mt-1 text-[0.6rem] font-light uppercase tracking-[0.42em] text-muted-foreground md:text-xs">
-        Studio de Beleza
-      </span>
+    <div className={`flex items-center ${className}`}>
+      <img
+        src={logoImg}
+        alt="Virtuosas Studio de Beleza"
+        width={1188}
+        height={1599}
+        className="h-14 w-auto object-contain md:h-16"
+      />
     </div>
   );
 }
