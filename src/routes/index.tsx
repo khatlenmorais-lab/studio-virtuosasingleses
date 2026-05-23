@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   Hand, Footprints, Scissors, Sparkles, MapPin, Instagram, Gem, Eye, Smile,
-  Menu, X, Calendar, ChevronRight,
+  Menu, X, Calendar, ChevronRight, Award, Star, HeartHandshake, UsersRound,
 } from "lucide-react";
 import heroImg from "@/assets/hero-salon.jpg";
 import aboutImg from "@/assets/about-salon.jpg";
@@ -384,15 +384,19 @@ function Index() {
               técnica. Nossa missão é realçar a sua beleza natural com os melhores produtos e
               profissionais especializados.
             </p>
-            <div className="mt-10 grid grid-cols-3 gap-4">
+            <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
               {[
-                { n: "+1.500", l: "Clientes" },
-                { n: "20+", l: "Serviços" },
-                { n: "5★", l: "Avaliação" },
+                { icon: Award, l: "Profissionais Certificadas" },
+                { icon: Star, l: "Produtos Premium" },
+                { icon: HeartHandshake, l: "Atendimento Personalizado" },
+                { icon: UsersRound, l: "Mais de 1.500 clientes atendidas" },
               ].map((s) => (
-                <div key={s.l} className="rounded-2xl border border-border bg-card p-5 text-center shadow-gold">
-                  <p className="shimmer-gold font-display text-3xl font-bold">{s.n}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">{s.l}</p>
+                <div
+                  key={s.l}
+                  className="group flex flex-col items-center rounded-2xl border border-border bg-card p-5 text-center shadow-gold"
+                >
+                  <s.icon className="h-9 w-9 text-[color:var(--gold-dark)] transition-transform duration-300 group-hover:scale-110" />
+                  <p className="mt-3 text-xs uppercase tracking-[0.16em] text-muted-foreground">{s.l}</p>
                 </div>
               ))}
             </div>
