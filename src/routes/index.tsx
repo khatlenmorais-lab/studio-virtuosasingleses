@@ -158,7 +158,7 @@ const SERVICE_GALLERY = [
   {
     title: "Manicure",
     image:
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&h=620&q=80",
+      "https://images.pexels.com/photos/7446915/pexels-photo-7446915.jpeg?auto=compress&cs=tinysrgb&w=900&h=620&fit=crop",
   },
   {
     title: "Pedicure",
@@ -168,17 +168,17 @@ const SERVICE_GALLERY = [
   {
     title: "Cabelo",
     image:
-      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&h=620&q=80",
+      "https://images.pexels.com/photos/3993443/pexels-photo-3993443.jpeg?auto=compress&cs=tinysrgb&w=900&h=620&fit=crop",
   },
   {
     title: "Sobrancelhas",
     image:
-      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&h=620&q=80",
+      "https://images.pexels.com/photos/8558248/pexels-photo-8558248.jpeg?auto=compress&cs=tinysrgb&w=900&h=620&fit=crop",
   },
   {
     title: "Cílios",
     image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&h=620&q=80",
+      "https://images.pexels.com/photos/5128268/pexels-photo-5128268.jpeg?auto=compress&cs=tinysrgb&w=900&h=620&fit=crop",
   },
 ];
 
