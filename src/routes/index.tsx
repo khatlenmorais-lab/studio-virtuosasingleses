@@ -129,6 +129,30 @@ const CATEGORIES: Category[] = [
   },
 ];
 
+const TESTIMONIALS = [
+  {
+    name: "Marina Alves",
+    service: "Manicure em gel",
+    text: "Atendimento impecável, ambiente lindo e minhas unhas ficaram perfeitas. Já virou meu momento de cuidado favorito.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&h=240&q=80",
+  },
+  {
+    name: "Camila Rocha",
+    service: "Cabelo e escova",
+    text: "Saí do studio me sentindo renovada. A equipe é muito atenciosa e explica cada detalhe do procedimento.",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=240&h=240&q=80",
+  },
+  {
+    name: "Juliana Martins",
+    service: "Sobrancelhas",
+    text: "O design ficou natural e valorizou muito meu rosto. Atendimento pontual, cuidadoso e super acolhedor.",
+    image:
+      "https://images.unsplash.com/photo-1487412720507-e7cb37603c6f?auto=format&fit=crop&w=240&h=240&q=80",
+  },
+];
+
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<string>(CATEGORIES[0].id);
@@ -421,6 +445,46 @@ function Index() {
               />
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* DEPOIMENTOS */}
+      <section id="depoimentos" className="bg-stone px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <p className="font-accent text-lg italic text-[color:var(--gold-dark)]">depoimentos</p>
+            <h2 className="mt-2 font-display text-4xl font-bold md:text-5xl">
+              <span className="shimmer-gold">Clientes que confiam</span>
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {TESTIMONIALS.map((testimonial) => (
+              <article
+                key={testimonial.name}
+                className="rounded-2xl border border-border bg-card p-7 text-center shadow-gold transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src={testimonial.image}
+                  alt={`Cliente ${testimonial.name}`}
+                  loading="lazy"
+                  width={96}
+                  height={96}
+                  className="mx-auto h-24 w-24 rounded-full border-2 border-[color:var(--gold)] object-cover shadow-gold"
+                />
+                <div className="mt-5 flex justify-center gap-1 text-[color:var(--gold-dark)]" aria-label="5 estrelas">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} className="h-5 w-5 fill-current" />
+                  ))}
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">"{testimonial.text}"</p>
+                <h3 className="mt-6 font-display text-xl font-semibold">{testimonial.name}</h3>
+                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[color:var(--gold-dark)]">
+                  {testimonial.service}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
