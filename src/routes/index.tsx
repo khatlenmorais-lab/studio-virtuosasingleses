@@ -163,7 +163,7 @@ const SERVICE_GALLERY = [
   {
     title: "Pedicure",
     image:
-      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&h=620&q=80",
+      "https://images.pexels.com/photos/7755549/pexels-photo-7755549.jpeg?auto=compress&cs=tinysrgb&w=900&h=620&fit=crop",
   },
   {
     title: "Cabelo",
