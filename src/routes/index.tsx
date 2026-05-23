@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
-  Hand, Footprints, Scissors, Sparkles, MapPin, Instagram,
+  Hand, Footprints, Scissors, Sparkles, MapPin, Instagram, Gem, Eye, Smile,
   Menu, X, Calendar, ChevronRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-salon.jpg";
@@ -42,26 +42,41 @@ type Category = {
 const CATEGORIES: Category[] = [
   {
     id: "maos",
-    label: "Mãos",
+    label: "Manicure",
     icon: Hand,
     tagline: "Manicure",
     services: [
-      { name: "Esmaltação Tradicional", desc: "Acabamento impecável com esmaltes de alta cobertura." },
-      { name: "Esmaltação em Gel", desc: "Brilho duradouro por até três semanas." },
-      { name: "Alongamento de Unhas", desc: "Acrílico, fibra de vidro ou gel sob medida." },
-      { name: "Spa das Mãos", desc: "Hidratação profunda e ritual de relaxamento." },
+      { name: "Manicure Tradicional", desc: "R$ 35" },
+      { name: "Esmaltação em Gel", desc: "R$ 75" },
+      { name: "Blindagem", desc: "R$ 90" },
+      { name: "Alongamento Soft Gel", desc: "R$ 140" },
+      { name: "Manutenção de Soft Gel", desc: "R$ 120" },
+      { name: "Manicure + Pedicure", desc: "R$ 85" },
     ],
   },
   {
     id: "pes",
-    label: "Pés",
+    label: "Pedicure",
     icon: Footprints,
     tagline: "Pedicure",
     services: [
-      { name: "Pedicure Tradicional", desc: "Cuidado completo com acabamento clássico." },
-      { name: "Esmaltação em Gel nos Pés", desc: "Cor vibrante e fixação prolongada." },
-      { name: "Plástica dos Pés", desc: "Renovação intensa para pés macios e saudáveis." },
-      { name: "Spa dos Pés", desc: "Esfoliação, hidratação e massagem relaxante." },
+      { name: "Pedicure Tradicional", desc: "R$ 50" },
+      { name: "Esmaltação em Gel nos Pés", desc: "R$ 85" },
+      { name: "Pedicure + Spa dos Pés", desc: "R$ 69" },
+      { name: "Spa dos Pés + Esmaltação em Gel", desc: "R$ 100" },
+      { name: "Plástica dos Pés", desc: "R$ 120" },
+      { name: "Spa Labial", desc: "R$ 40" },
+    ],
+  },
+  {
+    id: "unhas",
+    label: "Unhas",
+    icon: Gem,
+    tagline: "Unhas Postiças / Extensões",
+    services: [
+      { name: "Aplicação de Molde", desc: "R$ 180" },
+      { name: "Aplicação de Fibra", desc: "R$ 200" },
+      { name: "Manutenção da Aplicação", desc: "R$ 150" },
     ],
   },
   {
@@ -81,18 +96,35 @@ const CATEGORIES: Category[] = [
     ],
   },
   {
-    id: "rosto",
-    label: "Rosto",
+    id: "sobrancelhas",
+    label: "Sobrancelhas",
+    icon: Smile,
+    tagline: "Sobrancelhas",
+    services: [
+      { name: "Design de Sobrancelhas", desc: "R$ 40" },
+      { name: "Design + Tintura", desc: "R$ 75" },
+      { name: "Brow Lamination (Retorno Incluso)", desc: "R$ 120" },
+    ],
+  },
+  {
+    id: "facial",
+    label: "Estética Facial",
     icon: Sparkles,
     tagline: "Estética Facial",
     services: [
-      { name: "Design de Sobrancelha", desc: "Desenho harmonioso para o seu rosto." },
-      { name: "Design com Tintura", desc: "Definição com cor para um olhar marcante." },
-      { name: "Brow Lamination", desc: "Sobrancelhas alinhadas e volumosas." },
-      { name: "Extensão de Cílios", desc: "Olhar expressivo, fio a fio." },
-      { name: "Lash Lifting", desc: "Curvatura natural e duradoura." },
-      { name: "Limpeza de Pele", desc: "Pele renovada, leve e luminosa." },
-      { name: "Limpeza Profunda com Extração", desc: "Tratamento completo contra impurezas." },
+      { name: "Limpeza de Pele Completa", desc: "R$ 150" },
+    ],
+  },
+  {
+    id: "cilios",
+    label: "Cílios",
+    icon: Eye,
+    tagline: "Cílios",
+    services: [
+      { name: "Volume Brasileiro", desc: "R$ 160" },
+      { name: "Volume Egípcio", desc: "R$ 190" },
+      { name: "Fox Eyes", desc: "R$ 210" },
+      { name: "Mega Volume", desc: "R$ 190" },
     ],
   },
 ];
