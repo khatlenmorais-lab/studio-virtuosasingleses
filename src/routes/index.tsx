@@ -9,7 +9,7 @@ import heroImg from "@/assets/hero-salon.jpg";
 import aboutImg from "@/assets/about-salon.jpg";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { WHATSAPP_URL, BOOKING_URL, ADDRESS, MAPS_URL, INSTAGRAM_URL, PHONE } from "@/lib/site";
+import { WHATSAPP_URL, BOOKING_URL, ADDRESS, MAPS_URL, INSTAGRAM_URL, PHONE, createWhatsAppUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -70,12 +70,14 @@ const CATEGORIES: Category[] = [
     icon: Scissors,
     tagline: "Cabeleireiro",
     services: [
-      { name: "Corte", desc: "Cortes personalizados para realçar seu estilo." },
-      { name: "Tintura / Coloração", desc: "Cores precisas com produtos premium." },
-      { name: "Progressiva / Alisamento", desc: "Fios alinhados, leves e cheios de brilho." },
-      { name: "Hidratação Profunda", desc: "Tratamento restaurador para fios sedosos." },
-      { name: "Mega Hair", desc: "Volume e comprimento com técnica refinada." },
-      { name: "Tranças", desc: "Trançados artísticos e protetores." },
+      { name: "Corte de Cabelo", desc: "R$90" },
+      { name: "Escova", desc: "R$80" },
+      { name: "Hidratação", desc: "A partir de R$150" },
+      { name: "Tintura", desc: "Consultar valores." },
+      { name: "Progressiva", desc: "Consultar valores." },
+      { name: "Tranças", desc: "Consultar valores." },
+      { name: "Mega Hair", desc: "Consultar valores." },
+      { name: "Mechas", desc: "Consultar valores após avaliação." },
     ],
   },
   {
@@ -277,7 +279,9 @@ function Index() {
                 <h3 className="mt-5 font-display text-2xl font-semibold">{s.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 <a
-                  href={BOOKING_URL}
+                  href={createWhatsAppUrl(
+                    `Olá! Gostaria de agendar o serviço ${s.name} da categoria ${active.label} no Virtuosas Studio de Beleza.`,
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--gold-dark)] transition-colors hover:text-foreground"
